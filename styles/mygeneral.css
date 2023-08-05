@@ -1,0 +1,134 @@
+body{
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5{
+  font-family: Merriweather, 'Times New Roman', Times, serif;
+}
+.btn-primary{
+  background-color: #349F19 !important;
+  border: none !important;
+}
+.btn-primary:hover{
+  background-color: #1d570f !important;
+}
+
+/* Nav Bar */
+
+.nav-item{
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+.nav-item:hover{
+  background-color: #CBE5E1;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.dropdown-toggle{
+  color: #1d570f !important;
+}
+.dropdown, #signin-btn{
+  background-color: #3BD319;
+  font-weight: 700;
+  box-shadow: 1px 1px 6px rgb(0, 0, 0, 0.25);
+}
+.dropdown:hover{
+  background-color: #A2F292;
+}
+.dropdown-item:hover{
+  background-color: #A2F292 !important;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#signin-btn-link{
+  color: #10445c !important;
+}
+#signin-btn{
+  background-color: #0596D9;
+}
+#signin-btn:hover{
+  background-color: #8BCDE5;
+}
+.navbar-collapse{
+  text-align: center;
+}
+.myactive{
+  background-color: #CBE5E1 !important;
+}
+
+/* Footer */
+
+footer{
+  font-size: larger;
+  background-color: #8BCDE5;
+  color: #19698e;
+}
+footer h5{
+  font-weight: bold;
+}
+footer ul{
+  padding-left: 0;
+  list-style: none;
+}
+footer a{
+  color: #19698e !important;
+}
+footer a:hover{
+  color: white !important;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.footer-lower{
+  border-top: 1px solid white;
+}
+#footerCopyright{
+  text-align: right;
+}
+.footer-logo-wrapper{
+  background-color: white;
+  border-radius: 20px;
+}
+
+/* Page Title */
+
+.nacci-title{
+  background-color: #0596D9;
+  color: white;
+  position:absolute;
+  top: -120px;
+  z-index: 100;
+  box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.33);
+  -webkit-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.33);
+  -moz-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.33);
+}
+.nacci-title-box{
+  position:relative;
+}
+.nacci-title-box h1{
+  font-weight: bold;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 767px) {
+  #footerImg{
+    display: none;
+  }
+  .footer-lower{
+    text-align: center;
+  }
+  #footerCopyright{
+    text-align: center;
+  }
+  .coa{
+    display: none;
+  }
+  .mission-vision{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px){
+  .footer-upper{
+    text-align: center;
+  }
+  .footer-info{
+    display: none;
+  }
+}

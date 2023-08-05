@@ -1,0 +1,14 @@
+.myform-wrapper{
+  background-color: white;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+}
+.myform-wrapper label{
+  color: white;
+}
+.myform-img img{
+  height: 80%;
+}

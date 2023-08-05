@@ -1,0 +1,15 @@
+.notes{
+  background-color: #2f5931;
+  /* border-top-left-radius: 300px;
+  border-top-right-radius: 300px; */
+  color: white;
+}
+.notes li{
+  margin-bottom: 10px;
+}
+.sr-table-wrapper{
+  box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 0px 15px 0px rgba(0,0,0,0.15);
+  border-radius: 50px;
+}

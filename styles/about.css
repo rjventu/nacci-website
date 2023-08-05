@@ -1,0 +1,28 @@
+.myabout img{
+  width: 100%;
+}
+.about-img-box{
+  display: flex;
+  align-items: center;
+}
+.mv-desc, .mv-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mission-vision{
+  background-color: #349f19;
+  color: white;
+}
+.mission-vision img{
+  width: 80%;
+}
+.c1{
+  background-color: #1c739c;
+  padding: 50px 0;
+  text-align: center;
+}
+.section-content{
+  padding: 20px;
+}
