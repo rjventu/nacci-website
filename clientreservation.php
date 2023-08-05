@@ -78,9 +78,9 @@ $num_rows = $result->num_rows;
                                     if($row['status'] == "CANCELLED"){
                                         echo '<em>Not Applicable</em>';
                                     }else{
-                                        echo '<a href="clientreservation_edit.php?id='.$id.'"><button type="button" class="btn btn-primary">
+                                        echo '<a href="clientreservation_edit.php?id='.$id.'"><button type="button" class="btn btn-primary me-2">
                                         Edit</button></a>';
-                                        echo '<a href="#" onclick="myFunction('.$id.')"><button type="button" class="btn btn-danger ms-2">
+                                        echo '<a href="#" onclick="myFunction('.$id.')"><button type="button" class="btn btn-danger">
                                         Cancel</button></a>';
                                     }
                                     echo '</td>';
