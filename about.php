@@ -204,7 +204,7 @@
         <div class="row about-text">
           <h2 class="my-3"><b>WHO WE ARE</b></h2>
           <p>
-            Nature Awareness and Conservation Club Incorporation is a charity or fundraising organization that aims to further help and support the tropical tourism of Asia. Hence, their club is also the daughter of Conservation for Tomorrow Foundation, Inc and Miriam PEACE of Environmental Studies Institute of Miriam College, and finally also known to be the granddaughter of Foundation for Philippine Environment and great granddaughter of Philippine Eagle Foundation, Inc.
+            Nature Awareness and Conservation Club Incorporation is a non-governmental organization that aims to further help and support the tropical tourism of Asia. The club is also the daughter of Conservation for Tomorrow Foundation, Inc and Miriam PEACE of Environmental Studies Institute of Miriam College, and finally also known to be the granddaughter of Foundation for Philippine Environment and great granddaughter of Philippine Eagle Foundation, Inc.
           </p>
           <h2 class="my-3"><b>WHAT WE DO</b></h2>
           <p>
