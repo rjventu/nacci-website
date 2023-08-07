@@ -25,7 +25,7 @@
         </div>
         <div class="col-6 ps-5" id="footerImg">
           <div class="footer-logo-wrapper p-3">
-            <img src="assets/logo_full_remake.png" alt="" width="100%">
+            <img src="assets/logo_full.jpg" alt="" width="100%">
           </div>
         </div>
       </div>
