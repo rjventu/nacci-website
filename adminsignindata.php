@@ -29,6 +29,7 @@ function verifyUserCredentials($email, $password, $conn) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["emailaddress"];
+    $id_user = $_POST["ID"];
     $password = $_POST["password"];
     $Username = "";
     $Picturename = "";
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Call the verifyUserCredentials function
     if (verifyUserCredentials($email, $password, $conn)) {
         session_start();
-        $_SESSION['email'] = $email; 
+        $_SESSION['email'] = $email;
        
 
         $sql = "SELECT * FROM adminuser WHERE EmailAddress = '$email' limit 1";
@@ -47,8 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $Username  = $row["Name"];
             $Picturename  = $row["Photoname"];
             $Position  = $row["Position"];
-            
+            $ID = $row["ID"];
         }
+        $_SESSION['userID'] = $ID;
         $_SESSION['username'] = $Username; 
         $_SESSION['picturename'] = $Picturename; 
         $_SESSION['position'] = $Position; 

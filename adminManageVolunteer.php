@@ -30,8 +30,6 @@ if ($userData) {
     $hashedPassword = $userData['Password'];
     $Photoname = $userData['Photoname'];
     $Position = $userData['Position'];
-    $profile = $userData['Photoname'];
-    $idd = $userData['ID'];
 }
 
 ?>
@@ -41,7 +39,7 @@ if ($userData) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | My Profile</title>
+  <title>Admin | Manage Volunteers</title>
    <!-- Header Start -->
         <?php include('adminpanelheader.php') ?>
   <!-- Header End -->
@@ -50,35 +48,47 @@ if ($userData) {
    <!-- Your HTML body content here -->
 <div class="col-md-10 admindetails">
     <div class="container mt-4">
-        <h1>My Profile</h1>
+        <h1>Manage Volunteers</h1>
         <div class="container mt-4">
             <div class="card mx-auto">
                 <div class="card-body">
                     <form action="#" method="post">
                         <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Position</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($Position); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="password" name="password" value="<?php echo htmlspecialchars($hashedPassword); ?>" readonly>
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary" id="showHideBtn">Show</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary" name="action" id="btnInsertnewData" value="insert">Insert</button>
-                            <button type="button" class="btn btn-primary" name="action" id="btnEditnewData" value="edit">Edit</button>
+                            <table class="table" style="margin: 10px;">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                        <th>Date</th>
+                                        <th>Participants</th>
+                                        <th>Person</th>
+                                        <th>Contact</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $conn = mysqli_connect("localhost", "root", "", "nacci");
+
+                                    $sql = "SELECT * FROM `volunteer`";
+                                    $result = $conn->query($sql);
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>
+                                        <td>" . $row["id"] . "</td>
+                                        <td>" . $row["name"] . "</td>
+                                        <td>" . $row["location"] . "</td>
+                                        <td>" . $row["date"] . "</td>
+                                        <td>" . $row["participants"] . "</td>
+                                        <td>" . $row["person"] . "</td>
+                                        <td>" . $row["contact_num"] . "</td>
+                                        <td>" . $row["status"] . "</td>
+                                        </tr>";
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
                         </div>
                     </form>
                 </div>
@@ -123,7 +133,7 @@ if ($userData) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info" id="saveChanges">Save</button>
+                        <button type="submit" class="btn btn-info" id="saveChanges">Save Changes</button>
                     </div>
                 </form>
             </div>
@@ -141,29 +151,32 @@ if ($userData) {
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Edit Profile</h4>
+                <h4 class="modal-title">Register new Admin</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal Body -->
             <div class="modal-body">
-            <form action="admineditdata.php" method="POST" enctype="multipart/form-data">
+            <form action="#" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" name="id" value="<?php echo htmlspecialchars($idd); ?>" hidden><br>
                         <label for="newName">Name</label>
-                        <input type="text" class="form-control" id="newName" name="newName" value="<?php echo htmlspecialchars($name); ?>">
+                        <input type="text" class="form-control" id="newName" name="newName" required>
                     </div>
                     <div class="form-group">
                         <label for="groupName">EmailAddress:</label>
-                        <input type="text" class="form-control" id="newEmailAddress" name="newEmailAddress" value="<?php echo htmlspecialchars($email); ?>" readonly>
+                        <input type="text" class="form-control" id="newEmailAddress" name="newEmailAddress" required>
                     </div>
                     <div class="form-group">
                         <label for="activityLocation">Position:</label>
-                        <input type="text" class="form-control" id="newPosition" name="newPosition" value="<?php echo htmlspecialchars($Position); ?>">
+                        <input type="text" class="form-control" id="newPosition" name="newPosition" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="activityLocation">Password:</label>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" required>
                     </div>
                     <div class="form-group">
                         <label for="profileImage">Upload Profile Image:</label>
-                        <input type="file" class="form-control-file" id="profileImage" name="profileImage" value="<?php echo htmlspecialchars($profile); ?>">
+                        <input type="file" class="form-control-file" id="profileImage" name="profileImage" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -171,9 +184,9 @@ if ($userData) {
                     </div>
                 </form>
             </div>
-            <?php
 
-            ?>
+
+           
         </div>
     </div>
 </div>
@@ -203,6 +216,6 @@ if ($userData) {
         $("#mdlInsertData").modal("show")
   });
   $("#btnEditnewData").click(function (){
-        $("#mdlEditData").modal("show")
+        alert(1)
   });
 </script>

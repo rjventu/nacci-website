@@ -68,17 +68,17 @@
       <div id="sidebar" class="col-md-2 text-light">
   <br>
   <!-- Add the image here -->
-    <img src="displayimage.php?image=<?php echo $_SESSION['picturename']; ?>" alt="<?php echo $_SESSION['username']; ?>" width="100" height="100">
+    <a href="adminuserpage.php"><img src="displayimage.php?image=<?php echo $_SESSION['picturename']; ?>" alt="<?php echo $_SESSION['username']; ?>" width="100" height="100">
     <h3 class="linkuser"><?php echo $_SESSION['username']; ?></h3>
-    <span class="linkuser"><?php echo $_SESSION['position']; ?></span><br>
+    <span class="linkuser"><?php echo $_SESSION['position']; ?></span><br></a>
     <span class="linkuser"><a class="myprofiledesign" href="adminmyprofile.php" title="My Profile">View my profile</a></span>
     <br><br>
     <ul class="nav flex-column">
         <li class="nav-item">
-        <a class="nav-link linkuser" href="clientvolunteer.php"><i class="fas fa-bars"></i> Manage Programs</a>
+        <a class="nav-link linkuser" href="adminManageProgram.php"><i class="fas fa-bars"></i> Manage Programs</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link linkuser" href="clientreservation.php"><i class="fas fa-users"></i> Manage Volunteers</a>
+        <a class="nav-link linkuser" href="adminManageVolunteer.php"><i class="fas fa-users"></i> Manage Volunteers</a>
         </li>
         <!-- Add more navigation items here -->
     </ul>

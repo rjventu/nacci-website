@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2023 at 12:27 PM
+-- Generation Time: Aug 05, 2023 at 04:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,11 +41,7 @@ CREATE TABLE `adminuser` (
 --
 
 INSERT INTO `adminuser` (`ID`, `Name`, `Position`, `EmailAddress`, `Password`, `Photoname`) VALUES
-(1, 'Jomar Perez', 'Programmer', 'jomar@gmail.com', '$2y$10$0FkWyr7LzxLusFGvzv.zdOyAEDU9jiplDF6lz/M9dbkqV2xU9KCae', 'user.png'),
-(2, 'Nadine', '', '', '$2y$10$7WQxh3Ql/MCEjUw1Mpsa6uAcLOyjDhbS8YH0lJ/EdBTNccqivzwwS', ''),
-(3, 'nadine', 'wife', 'nadine@gmail.com', '$2y$10$Ubfi6rQUFhXJo31Gky04mOZlf7iHbneVIoQFYH4RDnrM6ONgYOEj6', 'images/tawamga10.jpg'),
-(4, 'test123', 'Developer', 'test@gmail.com', '$2y$10$phhwIE5Za1gfVvPA4Cw5ruztVwNK/ItagvLiCYbInjqGVwz3rMnma', 'tawamga10.jpg'),
-(5, 'Ruby Ventura', 'Dev', 'rubyv@gmail.com', '123', '');
+(1, 'Ruby Ventura', 'Programmer', 'ruby@gmail.com', '$2y$10$0FkWyr7LzxLusFGvzv.zdOyAEDU9jiplDF6lz/M9dbkqV2xU9KCae', 'user.png');
 
 -- --------------------------------------------------------
 
@@ -65,8 +61,6 @@ CREATE TABLE `clientuser` (
 --
 
 INSERT INTO `clientuser` (`ClientID`, `Name`, `EmailAddress`, `Password`) VALUES
-(2, 'asd', 'asdasd@gmail.com', '$2y$10$bmEYiHQFuFCNkgszRaZVI.hkSgvm31YodKfxfMrtxvYeTxazzSnHC'),
-(3, 'Jomar Perez', 'jomar@gmail.com', '$2y$10$0FkWyr7LzxLusFGvzv.zdOyAEDU9jiplDF6lz/M9dbkqV2xU9KCae'),
 (4, 'Ruby', 'ruby@gmail.com', '$2y$10$aYX6Wo5v.QGjZmX9t9Dg.u3JG4uj8NBq2qVG1JlnmohoIUyejfL.K');
 
 -- --------------------------------------------------------

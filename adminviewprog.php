@@ -49,36 +49,39 @@ if ($userData) {
       <!-- Content Area -->
    <!-- Your HTML body content here -->
 <div class="col-md-10 admindetails">
+
+    <?php
+    $conn = mysqli_connect("localhost", "root", "", "nacci");
+    if (isset($_GET['id'])) {
+        $get_id = $_GET['id'];
+    }
+
+    $result = mysqli_query($conn, "SELECT * FROM `program` WHERE `id`= '$get_id'");
+    $row = mysqli_fetch_array($result);
+    ?>
+
     <div class="container mt-4">
-        <h1>My Profile</h1>
+        <h1>View Programs</h1>
         <div class="container mt-4">
             <div class="card mx-auto">
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="admineditprog.php" method="post">
                         <div class="form-group">
+                            <label for="name">ID:</label>
+                            <input type="text" class="form-control" name="id" value="<?php echo $row['id'] ?>" readonly>
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" readonly>
+                            <input type="text" class="form-control" name="name" value="<?php echo $row['name'] ?>" readonly>
+                            <label for="email">Location:</label>
+                            <input type="text" class="form-control" name="loc" value="<?php echo $row['location'] ?>" readonly>
+                            <label for="email">Description</label>
+                            <input type="text" class="form-control" name="des" value="<?php echo $row['description'] ?>" readonly>
+                            <label for="email">Start Date</label>
+                            <input type="text" class="form-control" name="sdate" value="<?php echo $row['start_date'] ?>" readonly>
+                            <label for="email">End Date</label>
+                            <input type="text" class="form-control" name="edate" value="<?php echo $row['end_date'] ?>" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Position</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($Position); ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="password" name="password" value="<?php echo htmlspecialchars($hashedPassword); ?>" readonly>
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary" id="showHideBtn">Show</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-primary" name="action" id="btnInsertnewData" value="insert">Insert</button>
-                            <button type="button" class="btn btn-primary" name="action" id="btnEditnewData" value="edit">Edit</button>
+                            <a href="adminManageProgram.php"><button type="button" class="btn btn-danger" name="action" style="float: right; margin-right: 15px;">Return</button></a><br>
                         </div>
                     </form>
                 </div>
@@ -86,6 +89,26 @@ if ($userData) {
         </div>
     </div>
 </div>
+
+<?php
+if (isset($_POST['save'])) {
+    $conn = mysqli_connect("localhost", "root", "", "nacci");
+
+    $name = $_POST['name'];
+    $loca = $_POST['loc'];
+    $desc = $_POST['des'];
+    $start = $_POST['sdate'];
+    $end = $_POST['edate'];
+    $updateID = $_POST['id'];
+
+    $sql_query = mysqli_query($conn, "UPDATE `program` SET `name`='$name',`location`='$loca',`description`='$desc',`start_date`='$start',`end_date`='$end' WHERE `id`='$updateID'");
+
+    if ($sql_query) {
+        echo '<script>alert("Updated Successfully!")</script>';
+        header("Location: admineditprog.php?id= " . $row['id'] . "");
+    }
+}
+?>
 
 
 <div class="modal fade" id="mdlInsertData">
