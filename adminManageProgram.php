@@ -167,8 +167,6 @@ if (isset($_GET['id'])) {
             </div>
 
             <?php
-            $conn = mysqli_connect("localhost", "root", "", "nacci");
-
             if (isset($_POST['add'])) {
 
                 $name = $_POST['newName'];
